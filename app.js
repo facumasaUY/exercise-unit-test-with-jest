@@ -23,18 +23,18 @@ const fromEuroToDollar = function(valueInEuro) {
 //De dolar a yen
 const fromDollarToYen = function(valueInDollar) {
     // Convertimos el valor a dólares
-    let valueInYen = (valueInDollar * 156.5)/1.07;
-    // Retornamos el valor en dólares
+    let valueInYen = Math.round((valueInDollar * 156.5)/1.07);
     return valueInYen;
 }
 
 const fromYenToPound = function(valueInYen) {
-    let valueInPound = (valueInYen * 0.87)/156.5;
+    let valueInPound = Math.round((valueInYen * 0.87)/156.5);
     return valueInPound;
 }
 // Solo un registro en consola para nosotros
 console.log(sum(7,3))
-
+console.log(fromDollarToYen(1))
+console.log(fromYenToPound(100))
 // Exporta la función para usarla en otros archivos 
 // (similar a la palabra clave "export" cuando se usa webpack)
 module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound};
